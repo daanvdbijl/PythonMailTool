@@ -15,8 +15,9 @@ def filter_inbox(imap, sender):
     imap.select("Inbox")
     status, messages = imap.search(None, "X-GM-RAW", "from:%s" % sender)
     n = len(str(messages).split(" "))
-    print("We found %s mails from %s.\n" % (n, sender))
+    print("We found %s mails from %s." % (n, sender))
     imap.close()    
+
 
 def main():
     creds = get_creds()
